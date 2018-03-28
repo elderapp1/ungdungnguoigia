@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.luchen97.oldmanoflogan.Creategame1Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/background"
+                android:src="@drawable/upphoto" />
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:hint="Nội Dung Câu Hỏi" />
+
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow android:padding="30dp">
+
+                <TextView
+                    android:padding="10dp"
+                    android:text="Chỗ Này Ở Đâu?"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+
+            <TableRow android:padding="5dp">
+
+                <TextView
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="30dp"
+                    android:text="Đáp Án"
+                    android:textSize="24dp" />
+            </TableRow>
+
+            <TableRow android:padding="5dp">
+
+                <AutoCompleteTextView
+                    android:width="100dp"
+                    android:hint="A:)"
+                    android:maxLines="1"
+                    android:textAlignment="center" />
+
+                <AutoCompleteTextView
+                    android:width="200dp"
+                    android:hint="B:)"
+                    android:maxLines="1"
+                    android:textAlignment="center" />
+
+            </TableRow>
+
+            <TableRow android:padding="5dp">
+
+                <AutoCompleteTextView
+                    android:width="1dp"
+                    android:hint="C:)"
+                    android:maxLines="1"
+                    android:textAlignment="center" />
+
+                <AutoCompleteTextView
+                    android:width="1dp"
+                    android:hint="D:)"
+                    android:maxLines="1"
+                    android:textAlignment="center" />
+
+            </TableRow>
+
+            <TableRow android:padding="10dp">
+
+                <TextView
+                    android:paddingLeft="30dp"
+                    android:text="Đáp Án Đúng" />
+
+                <Spinner></Spinner>
+            </TableRow>
+
+            <Button
+                android:text="Upload"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize" />
+        </TableLayout>
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

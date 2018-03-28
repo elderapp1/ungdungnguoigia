@@ -1,0 +1,64 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context="com.example.luchen97.oldmanoflogan.Fragment.FragTwo">
+
+    <LinearLayout
+        android:background="@drawable/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:paddingBottom="40dp"
+            android:maxLines="1"
+            android:textColor="#ff8811"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:text="Choise A Game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/game1"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:src="@drawable/game1" />
+        <TextView
+            android:textColor="#ff0000"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:text="Four Awser"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:src="@drawable/game2" />
+        <TextView
+            android:textColor="#00ff00"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:text="Yes/No"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:src="@drawable/unreal" />
+        <TextView
+            android:textColor="#0000ff"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:text="Create Game "
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</FrameLayout>

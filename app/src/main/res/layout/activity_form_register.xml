@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context="com.example.luchen97.oldmanoflogan.Activity.FormRegisterActivity">
+
+    <ImageView
+        android:id="@+id/uploadavatar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:background="@drawable/avatar"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:src="@drawable/profile" />
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <AutoCompleteTextView
+            android:id="@+id/user_res"
+            android:hint="UserName"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize" />
+
+        <AutoCompleteTextView
+            android:id="@+id/pass_res"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:hint="PassWord"
+            android:inputType="textPassword" />
+
+        <AutoCompleteTextView
+            android:id="@+id/repass_res"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:hint="RePassword"
+            android:inputType="textPassword" />
+        <AutoCompleteTextView
+            android:id="@+id/info_res"
+            android:hint="InFormation"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize" />
+        <Button
+            android:id="@+id/registerbtn"
+            android:background="@drawable/avatar"
+            android:text="Ok,I'am Infomations"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize" />
+    </LinearLayout>
+
+</LinearLayout>
