@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/OldManOfLogan.iml" filepath="$PROJECT_DIR$/OldManOfLogan.iml" />
+      <module fileurl="file://F:\dowload\OldManOfLogan\ungdungnguoigia\OldManOfLogan.iml" filepath="F:\dowload\OldManOfLogan\ungdungnguoigia\OldManOfLogan.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://F:\dowload\OldManOfLogan\ungdungnguoigia\app\app.iml" filepath="F:\dowload\OldManOfLogan\ungdungnguoigia\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ungdungnguoigia.iml" filepath="$PROJECT_DIR$/ungdungnguoigia.iml" />
     </modules>
   </component>
 </project>

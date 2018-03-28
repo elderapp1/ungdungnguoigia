@@ -1,0 +1,7 @@
+RewriteEngine on
+
+RewriteBase /dai/backend/web
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule . index.php

@@ -1,0 +1,4 @@
+1.Copy file oldman và yii2 vào Xammp/htdocs 
+2.Insert database vào mysql (file sql trong file oldman/oldman.sql)
+3.vào cmd g? "cd C:/xampp/htdocs/dai" r?i g? "init" r?i g? 0 r?i yes
+4.Sau ðó b?t xammp mysql and apache r?i truy c?p vào link "http://localhost/yii2/backend/web/"
