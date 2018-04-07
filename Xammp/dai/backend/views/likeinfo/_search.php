@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="likeinfo-search">
+<div class="like-info-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],

@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "{{%like_info}}".
+ * This is the model class for table "{{%likeinfo}}".
  *
  * @property int $id_newfeed
  * @property int $id_user
@@ -14,7 +14,7 @@ use Yii;
  * @property Newfeed $newfeed
  * @property User $user
  */
-class LikeInfo extends \yii\db\ActiveRecord
+class Likeinfo extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
@@ -34,8 +34,8 @@ class LikeInfo extends \yii\db\ActiveRecord
             [['id_newfeed', 'id_user'], 'integer'],
             [['created_at'], 'safe'],
             [['id_newfeed', 'id_user'], 'unique', 'targetAttribute' => ['id_newfeed', 'id_user']],
-            [['id_newfeed'], 'exist', 'skipOnError' => true, 'targetClass' => Newfeed::className(), 'targetAttribute' => ['id_newfeed' => 'id_newfeed']],
-            [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id_login']],
+            [['id_newfeed'], 'exist', 'skipOnError' => true, 'targetClass' => Newfeed::className(), 'targetAttribute' => ['id_newfeed' => 'id']],
+            [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
         ];
     }
 
@@ -56,7 +56,7 @@ class LikeInfo extends \yii\db\ActiveRecord
      */
     public function getNewfeed()
     {
-        return $this->hasOne(Newfeed::className(), ['id_newfeed' => 'id_newfeed']);
+        return $this->hasOne(Newfeed::className(), ['id' => 'id_newfeed']);
     }
 
     /**
@@ -64,6 +64,6 @@ class LikeInfo extends \yii\db\ActiveRecord
      */
     public function getUser()
     {
-        return $this->hasOne(User::className(), ['id_login' => 'id_user']);
+        return $this->hasOne(User::className(), ['id' => 'id_user']);
     }
 }

@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Newfeed */
 
-$this->title = $model->id_newfeed;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Newfeeds', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id_newfeed' => $model->id_newfeed, 'id_user' => $model->id_user], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id_newfeed' => $model->id_newfeed, 'id_user' => $model->id_user], [
+        <?= Html::a('Update', ['update', 'id' => $model->id, 'id_user' => $model->id_user], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->id, 'id_user' => $model->id_user], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id_newfeed',
+            'id',
             'id_user',
             'status',
             'image',

@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "{{%newfeed}}".
  *
- * @property int $id_newfeed
+ * @property int $id
  * @property int $id_user
  * @property string $status
  * @property string $image
@@ -15,7 +15,7 @@ use Yii;
  * @property string $created_at
  *
  * @property Comment[] $comments
- * @property LikeInfo[] $likeInfos
+ * @property Likeinfo[] $likeInfos
  * @property User[] $users
  * @property User $user
  */
@@ -41,7 +41,7 @@ class Newfeed extends \yii\db\ActiveRecord
             [['status'], 'string', 'max' => 255],
             [['image'], 'string', 'max' => 12],
             [['block'], 'string', 'max' => 3],
-            [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id_login']],
+            [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
         ];
     }
 
@@ -51,7 +51,7 @@ class Newfeed extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_newfeed' => 'Id Newfeed',
+            'id' => 'Id Newfeed',
             'id_user' => 'Id User',
             'status' => 'Status',
             'image' => 'Image',
@@ -65,7 +65,7 @@ class Newfeed extends \yii\db\ActiveRecord
      */
     public function getComments()
     {
-        return $this->hasMany(Comment::className(), ['id_newfeed' => 'id_newfeed']);
+        return $this->hasMany(Comment::className(), ['id' => 'id']);
     }
 
     /**
@@ -73,7 +73,7 @@ class Newfeed extends \yii\db\ActiveRecord
      */
     public function getLikeInfos()
     {
-        return $this->hasMany(LikeInfo::className(), ['id_newfeed' => 'id_newfeed']);
+        return $this->hasMany(Likeinfo::className(), ['id' => 'id']);
     }
 
     /**
@@ -81,7 +81,7 @@ class Newfeed extends \yii\db\ActiveRecord
      */
     public function getUsers()
     {
-        return $this->hasMany(User::className(), ['id_login' => 'id_user'])->viaTable('{{%like_info}}', ['id_newfeed' => 'id_newfeed']);
+        return $this->hasMany(User::className(), ['id' => 'id_user'])->viaTable('{{%likeinfo}}', ['id' => 'id']);
     }
 
     /**
@@ -89,6 +89,6 @@ class Newfeed extends \yii\db\ActiveRecord
      */
     public function getUser()
     {
-        return $this->hasOne(User::className(), ['id_login' => 'id_user']);
+        return $this->hasOne(User::className(), ['id' => 'id_user']);
     }
 }

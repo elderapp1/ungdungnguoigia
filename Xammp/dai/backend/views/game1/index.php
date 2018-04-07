@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\Game1_Search */
+/* @var $searchModel backend\models\Game1_Search */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Game1s';
@@ -25,12 +25,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_question',
-            'id_user',
-            'status',
+            'id',
+            'tag',
             'image',
             'A',
-            //'B',
+            'B',
             //'C',
             //'D',
             //'answer',

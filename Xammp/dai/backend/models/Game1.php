@@ -1,15 +1,14 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 use Yii;
 
 /**
  * This is the model class for table "{{%game_1}}".
  *
- * @property int $id_question
- * @property int $id_user
- * @property string $status
+ * @property int $id
+ * @property string $tag
  * @property string $image
  * @property string $A
  * @property string $B
@@ -20,8 +19,6 @@ use Yii;
  * @property int $wrong
  * @property int $block
  * @property string $created_at
- *
- * @property User $user
  */
 class Game1 extends \yii\db\ActiveRecord
 {
@@ -39,14 +36,13 @@ class Game1 extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_question', 'id_user', 'image', 'A', 'B', 'C', 'D', 'answer', 'created_at'], 'required'],
-            [['id_question', 'id_user', 'correct', 'wrong'], 'integer'],
+            [['id', 'image', 'A', 'B', 'C', 'D', 'answer', 'created_at'], 'required'],
+            [['id', 'correct', 'wrong'], 'integer'],
             [['created_at'], 'safe'],
-            [['status', 'image', 'A', 'B', 'C', 'D'], 'string', 'max' => 255],
+            [['tag', 'image', 'A', 'B', 'C', 'D'], 'string', 'max' => 255],
             [['answer'], 'string', 'max' => 1],
             [['block'], 'string', 'max' => 3],
-            [['id_question', 'id_user'], 'unique', 'targetAttribute' => ['id_question', 'id_user']],
-            [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id_login']],
+            [['id'], 'unique'],
         ];
     }
 
@@ -56,9 +52,8 @@ class Game1 extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_question' => 'Id Question',
-            'id_user' => 'Id User',
-            'status' => 'Status',
+            'id' => 'ID',
+            'tag' => 'Tag',
             'image' => 'Image',
             'A' => 'A',
             'B' => 'B',
@@ -70,13 +65,5 @@ class Game1 extends \yii\db\ActiveRecord
             'block' => 'Block',
             'created_at' => 'Created At',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUser()
-    {
-        return $this->hasOne(User::className(), ['id_login' => 'id_user']);
     }
 }

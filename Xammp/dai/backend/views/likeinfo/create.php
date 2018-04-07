@@ -6,11 +6,11 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Likeinfo */
 
-$this->title = 'Create Likeinfo';
-$this->params['breadcrumbs'][] = ['label' => 'Likeinfos', 'url' => ['index']];
+$this->title = 'Create Like Info';
+$this->params['breadcrumbs'][] = ['label' => 'Like Infos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="likeinfo-create">
+<div class="like-info-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

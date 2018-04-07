@@ -46,15 +46,15 @@ class NewfeedController extends Controller
 
     /**
      * Displays a single Newfeed model.
-     * @param integer $id_newfeed
+     * @param integer $id
      * @param integer $id_user
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id_newfeed, $id_user)
+    public function actionView($id, $id_user)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id_newfeed, $id_user),
+            'model' => $this->findModel($id, $id_user),
         ]);
     }
 
@@ -68,7 +68,7 @@ class NewfeedController extends Controller
         $model = new Newfeed();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id_newfeed' => $model->id_newfeed, 'id_user' => $model->id_user]);
+            return $this->redirect(['view', 'id' => $model->id, 'id_user' => $model->id_user]);
         }
 
         return $this->render('create', [
@@ -79,17 +79,17 @@ class NewfeedController extends Controller
     /**
      * Updates an existing Newfeed model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id_newfeed
+     * @param integer $id
      * @param integer $id_user
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id_newfeed, $id_user)
+    public function actionUpdate($id, $id_user)
     {
-        $model = $this->findModel($id_newfeed, $id_user);
+        $model = $this->findModel($id, $id_user);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id_newfeed' => $model->id_newfeed, 'id_user' => $model->id_user]);
+            return $this->redirect(['view', 'id' => $model->id, 'id_user' => $model->id_user]);
         }
 
         return $this->render('update', [
@@ -100,14 +100,14 @@ class NewfeedController extends Controller
     /**
      * Deletes an existing Newfeed model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id_newfeed
+     * @param integer $id
      * @param integer $id_user
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id_newfeed, $id_user)
+    public function actionDelete($id, $id_user)
     {
-        $this->findModel($id_newfeed, $id_user)->delete();
+        $this->findModel($id, $id_user)->delete();
 
         return $this->redirect(['index']);
     }
@@ -115,14 +115,14 @@ class NewfeedController extends Controller
     /**
      * Finds the Newfeed model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id_newfeed
+     * @param integer $id
      * @param integer $id_user
      * @return Newfeed the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id_newfeed, $id_user)
+    protected function findModel($id, $id_user)
     {
-        if (($model = Newfeed::findOne(['id_newfeed' => $id_newfeed, 'id_user' => $id_user])) !== null) {
+        if (($model = Newfeed::findOne(['id' => $id, 'id_user' => $id_user])) !== null) {
             return $model;
         }
 

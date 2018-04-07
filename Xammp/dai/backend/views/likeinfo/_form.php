@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="likeinfo-form">
+<div class="like-info-form">
 
     <?php $form = ActiveForm::begin(); ?>
 

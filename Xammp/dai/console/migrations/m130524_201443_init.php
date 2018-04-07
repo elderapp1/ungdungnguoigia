@@ -13,11 +13,12 @@ class m130524_201443_init extends Migration
         }
 
         $this->createTable('{{%user}}', [
-            'id_login' => $this->primaryKey(),
-            'username_login' => $this->string(12)->notNull(),
-            'password_login' => $this->string(12)->notNull(),
+            'id' => $this->primaryKey(),
+            'username' => $this->string(12)->notNull(),
+            'password' => $this->string(12)->notNull(),
             'avatar'=>$this->string()->notNull()->defaultValue('defaut_image'),
             'email' => $this->string()->notNull(),
+            'sex'=>$this->tinyInteger()->notNull(),
             'date' => $this->string(),
             'introduce' => $this->string(),
             'status' => $this->smallInteger()->notNull()->defaultValue(10),

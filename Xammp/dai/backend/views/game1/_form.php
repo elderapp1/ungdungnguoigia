@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Game1 */
+/* @var $model backend\models\Game1 */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -12,11 +12,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_question')->textInput() ?>
+    <?= $form->field($model, 'id')->textInput() ?>
 
-    <?= $form->field($model, 'id_user')->textInput() ?>
-
-    <?= $form->field($model, 'status')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'tag')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
 

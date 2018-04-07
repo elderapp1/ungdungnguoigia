@@ -3,14 +3,14 @@
 namespace backend\controllers;
 
 use Yii;
-use app\models\Game2;
-use app\models\Game2_Search;
+use backend\models\Game2;
+use backend\models\Game2_Search;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * Game2_Controller implements the CRUD actions for Game2 model.
+ * Game2Controller implements the CRUD actions for Game2 model.
  */
 class Game2Controller extends Controller
 {
@@ -46,15 +46,14 @@ class Game2Controller extends Controller
 
     /**
      * Displays a single Game2 model.
-     * @param integer $id_question
-     * @param integer $id_user
+     * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id_question, $id_user)
+    public function actionView($id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id_question, $id_user),
+            'model' => $this->findModel($id),
         ]);
     }
 
@@ -68,7 +67,7 @@ class Game2Controller extends Controller
         $model = new Game2();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id_question' => $model->id_question, 'id_user' => $model->id_user]);
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
@@ -79,17 +78,16 @@ class Game2Controller extends Controller
     /**
      * Updates an existing Game2 model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id_question
-     * @param integer $id_user
+     * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id_question, $id_user)
+    public function actionUpdate($id)
     {
-        $model = $this->findModel($id_question, $id_user);
+        $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id_question' => $model->id_question, 'id_user' => $model->id_user]);
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
@@ -100,14 +98,13 @@ class Game2Controller extends Controller
     /**
      * Deletes an existing Game2 model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id_question
-     * @param integer $id_user
+     * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id_question, $id_user)
+    public function actionDelete($id)
     {
-        $this->findModel($id_question, $id_user)->delete();
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
@@ -115,14 +112,13 @@ class Game2Controller extends Controller
     /**
      * Finds the Game2 model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id_question
-     * @param integer $id_user
+     * @param integer $id
      * @return Game2 the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id_question, $id_user)
+    protected function findModel($id)
     {
-        if (($model = Game2::findOne(['id_question' => $id_question, 'id_user' => $id_user])) !== null) {
+        if (($model = Game2::findOne($id)) !== null) {
             return $model;
         }
 

@@ -13,7 +13,7 @@ class m180319_150818_new_feed extends Migration
         }
 
         $this->createTable('{{%newfeed}}', [
-            'id_newfeed' => $this->integer(),
+            'id' => $this->integer(),
             'id_user'=> $this->integer(),
             'status' => $this->string()->defaultValue(""),
             'image' => $this->string(12)->notNull()->defaultValue("null"),
@@ -23,9 +23,9 @@ class m180319_150818_new_feed extends Migration
         $this->addPrimaryKey(
             'nf',
             'newfeed',
-            ['id_newfeed', 'id_user']
+            ['id', 'id_user']
         );
-        $this->alterColumn('{{%newfeed}}', 'id_newfeed', $this->Integer().' NOT NULL AUTO_INCREMENT');
+        $this->alterColumn('{{%newfeed}}', 'id', $this->Integer().' NOT NULL AUTO_INCREMENT');
 
     }
 }

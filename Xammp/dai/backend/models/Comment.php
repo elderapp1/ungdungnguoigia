@@ -7,8 +7,8 @@ use Yii;
 /**
  * This is the model class for table "{{%comment}}".
  *
- * @property int $id_comment
- * @property int $id_newfeed
+ * @property int $id
+ * @property int $id
  * @property int $id_user
  * @property string $status
  * @property int $block
@@ -33,13 +33,13 @@ class Comment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_newfeed', 'id_user'], 'integer'],
+            [['id', 'id_user'], 'integer'],
             [['status', 'created_at'], 'required'],
             [['created_at'], 'safe'],
             [['status'], 'string', 'max' => 255],
             [['block'], 'string', 'max' => 3],
-            [['id_newfeed'], 'exist', 'skipOnError' => true, 'targetClass' => Newfeed::className(), 'targetAttribute' => ['id_newfeed' => 'id_newfeed']],
-            [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id_login']],
+            [['id'], 'exist', 'skipOnError' => true, 'targetClass' => Newfeed::className(), 'targetAttribute' => ['id' => 'id']],
+            [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
         ];
     }
 
@@ -49,8 +49,8 @@ class Comment extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_comment' => 'Id Comment',
-            'id_newfeed' => 'Id Newfeed',
+            'id' => 'Id Comment',
+            'id' => 'Id Newfeed',
             'id_user' => 'Id User',
             'status' => 'Status',
             'block' => 'Block',
@@ -63,7 +63,7 @@ class Comment extends \yii\db\ActiveRecord
      */
     public function getNewfeed()
     {
-        return $this->hasOne(Newfeed::className(), ['id_newfeed' => 'id_newfeed']);
+        return $this->hasOne(Newfeed::className(), ['id' => 'id']);
     }
 
     /**
@@ -71,6 +71,6 @@ class Comment extends \yii\db\ActiveRecord
      */
     public function getUser()
     {
-        return $this->hasOne(User::className(), ['id_login' => 'id_user']);
+        return $this->hasOne(User::className(), ['id' => 'id_user']);
     }
 }

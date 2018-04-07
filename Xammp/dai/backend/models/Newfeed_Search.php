@@ -18,7 +18,7 @@ class Newfeed_Search extends Newfeed
     public function rules()
     {
         return [
-            [['id_newfeed', 'id_user'], 'integer'],
+            [['id', 'id_user'], 'integer'],
             [['status', 'image', 'block', 'created_at'], 'safe'],
         ];
     }
@@ -59,7 +59,7 @@ class Newfeed_Search extends Newfeed
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id_newfeed' => $this->id_newfeed,
+            'id' => $this->id,
             'id_user' => $this->id_user,
             'created_at' => $this->created_at,
         ]);

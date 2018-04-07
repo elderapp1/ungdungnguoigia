@@ -30,7 +30,7 @@ AppAsset::register($this);
 <div class="wrap bg-info">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'Ứng dựng cho người già',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-static-top',

@@ -1,14 +1,14 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Game1;
+use backend\models\Game1;
 
 /**
- * Game1_Search represents the model behind the search form of `app\models\Game1`.
+ * Game1_Search represents the model behind the search form of `backend\models\Game1`.
  */
 class Game1_Search extends Game1
 {
@@ -18,8 +18,8 @@ class Game1_Search extends Game1
     public function rules()
     {
         return [
-            [['id_question', 'id_user', 'correct', 'wrong'], 'integer'],
-            [['status', 'image', 'A', 'B', 'C', 'D', 'answer', 'block', 'created_at'], 'safe'],
+            [['id', 'correct', 'wrong'], 'integer'],
+            [['tag', 'image', 'A', 'B', 'C', 'D', 'answer', 'block', 'created_at'], 'safe'],
         ];
     }
 
@@ -59,14 +59,13 @@ class Game1_Search extends Game1
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id_question' => $this->id_question,
-            'id_user' => $this->id_user,
+            'id' => $this->id,
             'correct' => $this->correct,
             'wrong' => $this->wrong,
             'created_at' => $this->created_at,
         ]);
 
-        $query->andFilterWhere(['like', 'status', $this->status])
+        $query->andFilterWhere(['like', 'tag', $this->tag])
             ->andFilterWhere(['like', 'image', $this->image])
             ->andFilterWhere(['like', 'A', $this->A])
             ->andFilterWhere(['like', 'B', $this->B])

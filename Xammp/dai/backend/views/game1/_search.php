@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Game1_Search */
+/* @var $model backend\models\Game1_Search */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -15,17 +15,15 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id_question') ?>
+    <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'id_user') ?>
-
-    <?= $form->field($model, 'status') ?>
+    <?= $form->field($model, 'tag') ?>
 
     <?= $form->field($model, 'image') ?>
 
     <?= $form->field($model, 'A') ?>
 
-    <?php // echo $form->field($model, 'B') ?>
+    <?= $form->field($model, 'B') ?>
 
     <?php // echo $form->field($model, 'C') ?>
 

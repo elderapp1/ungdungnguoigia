@@ -7,10 +7,10 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Likeinfo */
 
 $this->title = $model->id_newfeed;
-$this->params['breadcrumbs'][] = ['label' => 'Likeinfos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Like Infos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="likeinfo-view">
+<div class="like-info-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

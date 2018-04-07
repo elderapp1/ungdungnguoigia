@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Game2_Search */
+/* @var $model backend\models\Game2_Search */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -15,17 +15,15 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id_question') ?>
-
-    <?= $form->field($model, 'id_user') ?>
+    <?= $form->field($model, 'id') ?>
 
     <?= $form->field($model, 'true_location') ?>
 
     <?= $form->field($model, 'wrong_location') ?>
 
-    <?= $form->field($model, 'imag') ?>
+    <?= $form->field($model, 'image') ?>
 
-    <?php // echo $form->field($model, 'answer') ?>
+    <?= $form->field($model, 'answer') ?>
 
     <?php // echo $form->field($model, 'correct') ?>
 

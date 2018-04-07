@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 $this->title = 'Update Comment: {nameAttribute}';
 $this->params['breadcrumbs'][] = ['label' => 'Comments', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id_comment, 'url' => ['view', 'id' => $model->id_comment]];
+$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="comment-update">

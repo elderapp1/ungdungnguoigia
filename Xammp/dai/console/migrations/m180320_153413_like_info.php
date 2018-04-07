@@ -18,17 +18,26 @@ class m180320_153413_like_info extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%like_info}}', [
-            'id_newfeed' => $this->integer(),
+        $this->createTable('{{%likeinfo}}', [
+            'id' => $this->integer(),
             'id_user' => $this->integer(),
             'created_at' => $this->dateTime(),
         ], $tableOptions);
         $this->addPrimaryKey(
             'like',
-            'like_info',
-            ['id_newfeed', 'id_user']
+            'likeinfo',
+            ['id', 'id_user']
         );
 
+        $this->createTable('{{%notify}}',
+            [
+                'id' => $this->integer(11),
+                'id' => $this->integer(100),
+                'id_user' => $this->integer(100),
+                'status'=>$this->integer(2),
+                'id_user_main' => $this->integer(11),
+                'created_at' => $this->dateTime(),
+            ], $tableOptions);
 
     }
 
